@@ -18,6 +18,12 @@
             }
         
 }
-$sql="INSERT INTO produit VALUES('T-shirt noir','T-shirt coton de couleur noire',15.50,10)";
- 
+         $servername = "localhost";
+         $username = "root";
+         $password = "";
+         $databasename = "BaseTest01";
+$pdo= new PDO("mysql:host=$servername;dbname=$databasename",$username, $password);
+$sql = "UPDATE produit SET quantité=1 WHERE id=4 ";
+$stmt= $pdo->prepare($sql);
+$stmt->execute();
 ?>
